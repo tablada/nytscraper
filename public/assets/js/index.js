@@ -67,5 +67,25 @@ $(document).ready(function () {
 
     function handleArticleSave() {
         var articleveToSave = $(this).parents(".panel").data();
+        articleveToSave.saved = true;
+
+        $.ajax({
+            method: "PATCH",
+            url: "/api/headlines",
+            data: articleveToSave
+        })
+        .then(function(data) {
+            if (data.ok) {
+                initPage();
+            }
+        });
     }
-})
+
+    function handleArticleScrape() {
+        $.get("/api/fetch")
+            .then(function(data) {
+                initPage();
+                bootbox.alert("<h3 class='text-center m-top-80'>" + data.message + "<h3>");
+            });
+    }
+});
