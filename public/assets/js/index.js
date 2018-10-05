@@ -50,7 +50,7 @@ $(document).ready(function () {
     function renderEmpty() {
         var emptyAlert = 
             $(["<div class='alert alert-warning text-center'>",
-                "<h4>Uh Oh, Looks like we don;t have any new articles.</h4>",
+                "<h4>Uh Oh, Looks like we don't have any new articles.</h4>",
                 "</div>",
                 "<div class='panel panel-default'>",
                 "<div class='panel-heading text-center'>",
